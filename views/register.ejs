@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>口罩预约</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .w {
+            width: 600px;
+            margin: auto;
+        }
+        
+        body {
+            background-image: url('/93.jpg');
+        }
+        
+        a,
+        a:active,
+        a:visited {
+            text-decoration: none;
+            color: #fff;
+        }
+        
+        a:hover {
+            text-decoration: none;
+            color: crimson;
+        }
+        
+        .login .container {
+            width: 600px;
+            margin: 0 auto;
+        }
+        
+        .login .login-form {
+            padding-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .login form {
+            width: 240px;
+            margin-top: 40px;
+            padding: 4px 84px 44px 84px;
+            background: rgba(0, 0, 0, 0.4);
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+        
+        .login form input {
+            width: 100%;
+        }
+        
+        .login form .title {
+            margin: 20px 0 5px;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .login form button {
+            background: orange;
+            width: 103%;
+            margin: 24px 0 0 0;
+            padding: 8px 20px;
+            border: 0;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        .login-form select {
+            width: 103%;
+            margin: 24px 0 0 0;
+            padding: 8px 20px;
+            border: 0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .error {
+            color: #df3033;
+            margin-left: 10px;
+        }
+        
+        .error_icon,
+        .success_icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: url(../img/error.png) no-repeat;
+            vertical-align: middle;
+            margin-top: -2px;
+        }
+        
+        .success {
+            color: #40b83f;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class=" w login">
+        <div class="container">
+            <div class="login-form">
+                <div style="text-align: center; font-weight: bold; font-size: 24px;color: #fff;">注册</div>
+                <form action="/user/register" method="post">
+                    <div class="title">电话</div>
+                    <input type="phone" name="phonenum" class="tel" />
+                    <div class="title">密码</div>
+                    <input type="password" name="upassword" class="pwd" />
+                    <div class="title">用户名</div>
+                    <input type="text" name="uname" class="un" required maxLength="15" />
+                    <div class="title">地区</div>
+                    <input type="text" name="area" class="area" />
+                    <div class="title">用户类型</div>
+                    <select class="form-control" name="utype" placeholder="User type">
+                        <option>单位用户</option>
+                        <option>个人用户</option>
+                    </select><br>
+
+                    <button type="submit">注册</button>
+                    <button type="reset">重置</button>
+                    <a href="/user/login">已有账号，去登录</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.onload = function() {
+            var regtel = /^1[3|4|5|7|8]\d{9}$/; // 手机号码的正则表达式
+            var tel = document.querySelector('.tel');
+            regexp(tel, regtel); // 手机号码
+            // 表单验证的函数
+            function regexp(ele, reg) {
+                ele.onblur = function() {
+                    if (reg.test(this.value)) {
+                        // console.log('正确的');
+                        this.nextElementSibling.className = 'success';
+                        this.nextElementSibling.innerHTML = '<i class="success_icon"></i> 恭喜您输入正确';
+                    } else {
+                        // console.log('不正确');
+                        this.nextElementSibling.className = 'error';
+                        this.nextElementSibling.innerHTML = '<i class="error_icon"></i> 格式不正确，请从新输入 ';
+                    }
+                }
+            };
+
+        }
+    </script>
+</body>
+
+</html>

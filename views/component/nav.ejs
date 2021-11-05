@@ -1,0 +1,65 @@
+<style>
+    nav {
+        border-bottom: 1px solid #333;
+        padding: 10px 0 20px;
+    }
+    
+    nav .container {
+        width: 1260px;
+        margin: 0 auto;
+    }
+    
+    nav .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    nav .brand {
+        width: 180px;
+        height: 50px;
+        background-image: url('/logo.png');
+        background-size: contain;
+        background-position: center left;
+        background-repeat: no-repeat;
+    }
+    
+    li {
+        list-style: none;
+    }
+    
+    nav .wrap-menu {
+        display: flex;
+    }
+    
+    nav .wrap-menu a,
+    div {
+        font-size: 16px;
+        font-weight: 600;
+        margin-left: 20px;
+        color: #000;
+        text-decoration: none;
+    }
+    
+    nav .wrap-menu a:hover {
+        color: orange;
+    }
+</style>
+
+<nav>
+    <div class="container">
+        <div class="nav">
+            <a href="/index">
+                <div class="brand"></div>
+            </a>
+
+            <div class="wrap-menu">
+
+                <a href="/user/text">个人信息</a>
+                <a href="/user/result">订单结果</a>
+                <a href="/user/resordresult">中签结果</a>
+                <a href="/user/logout">退出系统</a>
+            </div>
+        </div>
+    </div>
+</nav>

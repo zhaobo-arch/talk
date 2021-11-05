@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>口罩预约</title>
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/base.css">
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div class="header">
+        <!-- 网站标志 -->
+        <div class="logo fl">
+            <div class="logo fl">
+                <i>口罩预约--admin</i>
+            </div>
+        </div>
+        <!-- /网站标志 -->
+        <!-- 用户信息 -->
+        <div class="info">
+            <div class="profile dropdown fr">
+                <span class="btn dropdown-toggle" data-toggle="dropdown">
+                    <%= phonenum %> 
+                    <span class="caret"></span>
+                </span>
+                <ul class="dropdown-menu">
+                    <li><a href="/adminindex">主页</a></li>
+                    <li><a href="/admin/logout">退出登录</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /用户信息 -->
+    </div>
+    <!-- /头部 -->
+    <!-- 主体内容 -->
+    <div class="content">
+        <!-- 侧边栏 -->
+        <div class="aside fl">
+            <ul class="menu list-unstyled">
+                <li>
+                    <a class="item active" href="/adminindex">
+                        <span class="glyphicon glyphicon-user"></span> 主页面
+                    </a>
+                </li>
+
+            </ul>
+            <div class="cprt">
+                Powered by <a href="#" target="_blank">赵波，任滇杭，王振宇</a>
+            </div>
+        </div>
+        <!-- 侧边栏 -->
+        <div class="main">
+            <!-- 分类标题 -->
+            <div class="title">
+                <h4>口罩预约时间以及预约上限</h4>
+            </div>
+            <!-- /分类标题 -->
+            <form class="form-container" action="/adminindex/setRes" method="POST">
+                <div class="form-group">
+                    <label>请输入用户预约数量上限</label>
+                    <input type="number" name="Userlimit" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>请输入个人预约数量上限</label>
+                    <input type="number" name="Personallimit" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>请输入单位预约数量上限</label>
+                    <input type="number" name="Companylimit" class="form-control">
+                </div>
+                <div class="buttons">
+                    <button type="submit" class="btn btn-primary">修改</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- /主体内容 -->
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/lib/ckeditor5/ckeditor.js"></script>
+    <script type="text/javascript">
+        let editor;
+
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .then(newEditor => {
+                editor = newEditor;
+            })
+            .catch(error => {
+                console.error(error);
+            });
+
+        // 获取数据
+        // const editorData = editor.getData();
+    </script>
+</body>
+
+</html>

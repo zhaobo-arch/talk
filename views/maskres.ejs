@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>口罩预约</title>
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/base.css">
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div class="header">
+        <!-- 网站标志 -->
+        <div class="logo fl">
+            <i>中签结果</i>
+        </div>
+        <!-- /网站标志 -->
+        <!-- 用户信息 -->
+        <div class="info">
+            <div class="profile dropdown fr">
+                <span class="btn dropdown-toggle" data-toggle="dropdown">
+                    <%= phonenum %> 
+					<span class="caret"></span>
+                </span>
+                <ul class="dropdown-menu">
+                    <li><a href="/user/logout">退出登录</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /用户信息 -->
+    </div>
+    <!-- /头部 -->
+    <!-- 主体内容 -->
+    <div class="content">
+        <!-- 侧边栏 -->
+        <div class="aside fl">
+            <ul class="menu list-unstyled">
+                <li>
+                    <a class="item active" href="/index">
+                        <span class="glyphicon glyphicon-film"></span> 主页面
+                    </a>
+                </li>
+                <li>
+                    <a class="item active" href="/user/text">
+                        <span class="glyphicon glyphicon-user"></span> 个人信息
+                    </a>
+                </li>
+                <li>
+                    <a class="item active" href="/user/result">
+                        <span class="glyphicon glyphicon-hdd"></span> 订单结果
+                    </a>
+                </li>
+                <li>
+                    <a class="item active" href="/user/resordresult">
+                        <span class="glyphicon glyphicon-inbox"></span> 中签结果
+                    </a>
+                </li>
+            </ul>
+            <div class="cprt">
+                Powered by <a href="#" target="_blank">赵波，任滇杭，王振宇</a>
+            </div>
+        </div>
+        <!-- 侧边栏 -->
+        <div class="main">
+            <!-- 分类标题 -->
+            <div class="title">
+                <h4>用户个人中签信息</h4>
+                <span>您一共有<%= data3.length %>条信息 </span>
+                <a href="/user/reserve" class="btn btn-primary new">去预约口罩</a>
+            </div>
+            <!-- /分类标题 -->
+            <!-- 内容列表 -->
+            <table class="table table-striped table-bordered table-hover custom-table">
+                <thead>
+                    <tr>
+                        <th>预约结果</th>
+                        <th>预约编号</th>
+                        <th>电话号码</th>
+                        <th>预约时间</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(var i=0;i<data3.length;i++ ){%>
+                        <tr>
+
+                            <td>
+                                <%= data3[i][0]  %>
+                            </td>
+                            <td>
+                                <%= data3[i][1]  %>
+                            </td>
+                            <td>
+                                <%= data3[i][2]  %>
+                            </td>
+                            <td>
+                                <%= new Date()%>
+                            </td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+            <!-- /内容列表 -->
+            <!-- 分页 -->
+            <ul class="pagination">
+                <li>
+                    <a href="#">
+                        <span>&laquo;</span>
+                    </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                    <a href="#">
+                        <span>&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+            <!-- /分页 -->
+        </div>
+    </div>
+    <!-- /主体内容 -->
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

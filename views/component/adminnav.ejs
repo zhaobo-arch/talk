@@ -1,0 +1,62 @@
+<style>
+    nav {
+        border-bottom: 1px solid #333;
+        padding: 10px 0 20px;
+    }
+    
+    nav .container {
+        width: 1260px;
+        margin: 0 auto;
+    }
+    
+    nav .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    nav .brand {
+        width: 180px;
+        height: 50px;
+        background-image: url('/logo.png');
+        background-size: contain;
+        background-position: center left;
+        background-repeat: no-repeat;
+    }
+    
+    li {
+        list-style: none;
+    }
+    
+    nav .wrap-menu {
+        display: flex;
+    }
+    
+    nav .wrap-menu a,
+    div {
+        font-size: 16px;
+        font-weight: 600;
+        margin-left: 20px;
+        color: #000;
+        text-decoration: none;
+    }
+    
+    nav .wrap-menu a:hover {
+        color: orange;
+    }
+</style>
+
+<nav>
+    <div class="container">
+        <div class="nav">
+            <a href="/adminindex">
+                <div class="brand"></div>
+            </a>
+            <div class="wrap-menu">
+                <a href="/adminindex/edit">编辑</a>
+                <a href="/adminindex/editadd">更改口罩库存</a>
+                <a href="/admin/logout">退出系统</a>
+            </div>
+        </div>
+    </div>
+</nav>

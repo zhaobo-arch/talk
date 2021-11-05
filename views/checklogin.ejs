@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>口罩预约系统</title>
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-image: url('/93.jpg');
+        }
+        
+        .w {
+            width: 600px;
+            margin: auto;
+        }
+        
+        a {
+            display: block;
+            width: 200px;
+            height: 200px;
+            font-size: 30px;
+            text-decoration: none;
+            line-height: 200px;
+            color: #000;
+            cursor: pointer;
+        }
+        
+        a:hover {
+            color: crimson;
+        }
+        
+        .check {
+            position: relative;
+            height: 800px;
+        }
+        
+        .check h2 {
+            position: absolute;
+            top: 200px;
+            left: 46%;
+            transform: translate(-44%, -50%);
+            color: black;
+        }
+        
+        .checkleft {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            top: 50%;
+            left: 96px;
+            /* background-color: brown; */
+        }
+        
+        .checkright {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            top: 50%;
+            right: 80px;
+            /* background-color: brown; */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 选择用户类型进行登录 -->
+    <div class=" w check">
+        <h2>欢迎使用口罩预约系统</h2>
+        <div class="checkleft">
+            <a href="/user/login">
+                <i class="glyphicon glyphicon-user"> 普通用户</i>
+            </a>
+        </div>
+        <div class="checkright">
+            <a href="/admin/adminlogin">
+                <i class="glyphicon glyphicon-tower">管理员</i>
+            </a>
+        </div>
+    </div>
+
+    <script script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

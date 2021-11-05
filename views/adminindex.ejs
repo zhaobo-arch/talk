@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>口罩预约</title>
+    <style>
+        body {
+            background-image: url('/93.jpg');
+        }
+        
+        a,
+        a:active,
+        a:visited {
+            text-decoration: none;
+            color: #000;
+        }
+        
+        a:hover {
+            color: crimson
+        }
+        
+        .home .container {
+            width: 1260px;
+            margin: 0 auto;
+        }
+        
+        .home .banner {
+            width: 100%;
+            height: 700px;
+            background-image: url('/1.png');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .home h2 {
+            margin-top: 40px;
+        }
+        
+        .best-product {
+            margin-top: 35px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .product {
+            width: 300px;
+            font-size: 12px;
+            margin-right: 15px;
+            margin-bottom: 35px;
+        }
+        
+        .product .product-image {
+            width: 300px;
+            height: 300px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url('/1.png');
+            border: 1px solid #fff;
+            margin: 0 0 10px 0;
+            cursor: pointer;
+        }
+        
+        .product .product-name {
+            font-weight: bold;
+            margin: 0 0 10px 5px;
+        }
+        
+        .product .product-code {
+            margin: 0 0 5px 5px;
+            color: #555;
+        }
+        
+        .product .product-intro {
+            margin: 0 0 5px 5px;
+            color: #b0b0b0;
+        }
+        
+        .product .product-price {
+            font-size: 13px;
+            font-weight: bold;
+            margin: 0 0 5px 5px;
+        }
+        
+        .admins div {
+            float: left;
+            padding: 10px 20px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="home">
+        <%- include('./component/adminnav') %>
+            <div class="container">
+                <h2>BEST PRODUCT <span style="color: #ccc;">| 口罩种类</span></h2>
+                <div class="best-product">
+                    <% for(var i = 0; i < data.length; i++){ %>
+                        <div class="product">
+                            <div class="product-image" style="background-image: url('/<%-i+1%>.png');"></div>
+                            <div class="product-name">
+                                库存数量
+                                <%= data[i][1] %>
+                            </div>
+                        </div>
+                        <% } %>
+                </div>
+
+            </div>
+    </div>
+    </div>
+
+</body>
+
+</html>
